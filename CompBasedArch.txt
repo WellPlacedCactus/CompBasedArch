@@ -2,22 +2,16 @@
 PARTS
 
 	REGISTERS
-		000 a reg
-		001 b reg
-		010 c reg
-
-		011 gen
-		100 gen
-		101 gen
-		110 gen
-		
-		111 output
+		A
+		B
+		C
+		D
 
 	COUNTERS
 		00 gen
 		01 gen
 		10 gen
-		11 rom addr
+		11 ram address
 
 	ALU
 		00 add
@@ -29,12 +23,10 @@ MICRO-INSTRUCTIONS
 
 	REGISTERS
 		in
-		in2
 		in1
 		in0
 
 		out
-		out2
 		out1
 		out0
 
@@ -68,6 +60,17 @@ MICRO-INSTRUCTIONS
 		d1
 		d0
 
-COUNT BY TWO PROGRAM
+CODE FROM MICRO-INSTRUCTIONS
 
-	0 111 0 000 000 000 1000 000 1 0000 00
+Load zero to the A register
+	1 00 0 00 0 00 0 00 0001 0 00 1 0000 0000
+
+Add two to the A register
+	1 01 0 00 0 00 0 00 0001 0 00 1 0000 0010
+	1 00 0 00 0 00 0 00 0001 1 00 0 0000 0000
+
+Put the contents of A register onto D register
+	1 11 1 00 0 00 0 00 0001 0 00 0 0000 0000
+
+Jump to line one of the code
+	0 00 0 00 1 00 0 00 0000 0 00 1 0000 0001
