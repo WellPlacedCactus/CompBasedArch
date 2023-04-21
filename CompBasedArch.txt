@@ -1,0 +1,73 @@
+
+PARTS
+
+	REGISTERS
+		000 a reg
+		001 b reg
+		010 c reg
+
+		011 gen
+		100 gen
+		101 gen
+		110 gen
+		
+		111 output
+
+	COUNTERS
+		00 gen
+		01 gen
+		10 gen
+		11 rom addr
+
+	ALU
+		00 add
+		01 sub
+		10 and
+		11 or
+
+MICRO-INSTRUCTIONS
+
+	REGISTERS
+		in
+		in2
+		in1
+		in0
+
+		out
+		out2
+		out1
+		out0
+
+	COUNTERS
+		in
+		in1
+		in0
+
+		out
+		out1
+		out0
+
+		cnt3
+		cnt2
+		cnt1
+		cnt0
+
+	ALU
+		out
+		op1
+		op0
+
+	BUS
+		out
+		d7
+		d6
+		d5
+		d4
+		d3
+		d2
+		d1
+		d0
+
+COUNT BY TWO PROGRAM
+
+	0 111 0 000 000 000 1000 000 1 0000 00
